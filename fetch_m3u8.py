@@ -8,6 +8,7 @@ def fetch_m3u8_link():
         print("Failed to get page")
         return None
 
+    # Regex to extract .m3u8 link with token
     match = re.search(r'(http[^\'"\s]+\.m3u8\?token=[^\'"\s]+)', response.text)
     if match:
         return match.group(1)

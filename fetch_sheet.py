@@ -10,15 +10,17 @@ response.raise_for_status()
 data = StringIO(response.text)
 reader = csv.reader(data)
 
-target_value = ""  # default empty
+column_index = 0  # 0 for column A, 1 for B, etc.
 
-for i, row in enumerate(reader):
-    if i == 0:  # first row
-        if len(row) > 0:
-            target_value = row[0]
-        else:
-            print(f"Row {i+1} has no columns.")
-        break
+all_values = []
 
+for row in reader:
+    if len(row) > column_index:
+        all_values.append(row[column_index])
+    else:
+        all_values.append("")  # if column is missing in that row, add empty string
+
+# Save all column data, one value per line
 with open("output.txt", "w", encoding="utf-8") as f:
-    f.write(target_value + "\n")
+    for value in all_values:
+        f.write(value + "\n")

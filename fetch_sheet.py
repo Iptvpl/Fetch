@@ -10,17 +10,16 @@ response.raise_for_status()
 data = StringIO(response.text)
 reader = csv.reader(data)
 
-column_index = 0  # 0 for column A, 1 for B, etc.
-
-all_values = []
+output_lines = []
 
 for row in reader:
-    if len(row) > column_index:
-        all_values.append(row[column_index])
-    else:
-        all_values.append("")  # if column is missing in that row, add empty string
+    # Make sure row has at least columns A and B
+    val_a = row[0] if len(row) > 0 else ""
+    val_b = row[1] if len(row) > 1 else ""
+    
+    output_lines.append(val_a)
+    output_lines.append(val_b)
 
-# Save all column data, one value per line
 with open("output.txt", "w", encoding="utf-8") as f:
-    for value in all_values:
-        f.write(value + "\n")
+    for line in output_lines:
+        f.write(line + "\n")

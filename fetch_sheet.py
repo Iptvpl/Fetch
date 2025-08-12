@@ -2,23 +2,23 @@ import requests
 import csv
 from io import StringIO
 
-# Google Sheet CSV link
+# Your Google Sheet CSV link
 sheet_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTpBTvSmJZDwmmFtxg8wXpPZIqu1_VbXiZzXnFUv1LSNWmaz69R9RceGR4OboLmeZ-aa46lIHZ8OfmQ/pub?output=csv"
 
-# Download the sheet as CSV
+# Download the CSV
 response = requests.get(sheet_url)
 response.raise_for_status()
 
-# Parse CSV
+# Read CSV content
 data = StringIO(response.text)
 reader = csv.reader(data)
 
-# Example: get cell from Row 2, Column 3
+# Example: get Row 2, Column 3 (indexes start from 0)
 for i, row in enumerate(reader):
-    if i == 1:  # Second row
-        target_value = row[2]  # Third column
+    if i == 1:  # second row
+        target_value = row[2]  # third column
         break
 
-# Save to file
+# Save the value to a text file
 with open("output.txt", "w", encoding="utf-8") as f:
     f.write(target_value + "\n")

@@ -20,6 +20,6 @@ for row in reader:
     output_lines.append(val_a)
     output_lines.append(val_b)
 
-with open("output.txt", "w", encoding="utf-8") as f:
+with open("output.m3u", "w", encoding="utf-8") as f:
     for line in output_lines:
         f.write(line + "\n")

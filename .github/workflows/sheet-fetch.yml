@@ -3,14 +3,16 @@ name: Fetch Google Sheet Data
 on:
   schedule:
     - cron: "0 * * * *"  # runs every hour (UTC)
-  workflow_dispatch:     # allows manual trigger from GitHub UI
+  workflow_dispatch:     # allows manual trigger
 
 jobs:
   update-data:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repo
+      - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -24,9 +26,12 @@ jobs:
         run: python fetch_sheet.py
 
       - name: Commit and push changes
+        env:
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
+          git remote set-url origin https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}.git
           git add .
           git commit -m "Updated data from Google Sheet" || echo "No changes to commit"
-          git push
+          git push origin HEAD:${{ github.ref }}

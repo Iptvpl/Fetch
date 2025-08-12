@@ -10,7 +10,7 @@ response.raise_for_status()
 data = StringIO(response.text)
 reader = csv.reader(data)
 
-target_value = ""  # initialize with empty string
+target_value = ""  # default empty
 
 for i, row in enumerate(reader):
     if i == 0:  # first row
@@ -19,9 +19,6 @@ for i, row in enumerate(reader):
         else:
             print(f"Row {i+1} has no columns.")
         break
-
-if not target_value:
-    print("Warning: target_value was empty or not found.")
 
 with open("output.txt", "w", encoding="utf-8") as f:
     f.write(target_value + "\n")

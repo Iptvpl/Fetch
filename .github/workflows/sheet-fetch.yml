@@ -2,8 +2,10 @@ name: Fetch Google Sheet Data
 
 on:
   schedule:
-    - cron: "0 * * * *"  # runs every hour (UTC)
-  workflow_dispatch:     # allows manual trigger
+    - cron: "0 * * * *"  # Runs every hour (UTC)
+  workflow_dispatch:     # Manual trigger
+  repository_dispatch:   # Triggered by Google Sheet edits
+    types: [sheet_updated]
 
 jobs:
   update-data:
@@ -33,18 +35,14 @@ jobs:
           git config --global user.email "actions@github.com"
           git remote set-url origin https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}.git
 
-          # Stash any local changes (including untracked) to prevent rebase errors
           git add .
           git stash push --include-untracked -m "workflow stash" || echo "No changes to stash"
 
-          # Fetch and rebase latest remote changes
           git fetch origin main
           git rebase origin/main || git pull --rebase origin main
 
-          # Reapply stashed changes
           git stash pop || echo "No stashed changes"
 
-          # Commit and push
           git add .
           git commit -m "Updated data from Google Sheet" || echo "No changes to commit"
           git push origin HEAD:main

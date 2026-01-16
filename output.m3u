@@ -1,5 +1,8 @@
 #EXTM3U
-#EXTINF:-1,#EXTINF:-1 tvg-logo="https://i.imgur.com/5eN9luP.png" ,CHANNEL I
+#EXTINF:-1,#EXTINF:-1 group-title="Toffee" tvg-chno="" tvg-id="" tvg-logo="https://assets-prod.services.toffeelive.com/f_png,w_300,q_85/WyPuDJsBEef-9-uVUA_z/posters/ea20055c-a824-443c-8083-ce8e2da8b922.png", Channel S
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 11; SM-A505F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.7049.79 Mobile Safari/537.36
+#EXTHTTP:{"cookie":"Edge-Cache-Cookie=URLPrefix=aHR0cHM6Ly9ibGRjbXByb2QtY2RuLnRvZmZlZWxpdmUuY29t:Expires=1768775084:KeyName=prod_linear:Signature=j9vK5sLgeI3_8cfL7E1I5EB2yAKIR9_hB7N4Y4zx5b0tNuQkuwKcVGPYLImAf4iGePuFsdZdB4yHP60CYMEtCA"}
+https://bldcmprod-cdn.toffeelive.com/cdn/live/channel_s_tv/playlist.m3u8
 http://10.99.99.99:8082/CHANNEL.I.HD/index.m3u8?token=c24f5d5254887598ad90244f569316b54ac5b5c1-8d15d6d64b32a3add4d8bb44682d51e3-1768611299-1768600499&remote=no_check_ip
 #EXTINF:-1,#EXTINF:-1 tvg-logo="https://i.imgur.com/XNmcPWE.png" ,ATN BANGLA
 http://10.99.99.99:8082/ATN.BANGLA.HD/index.m3u8?token=6dd564b667ef701dbe9d079cac15b28243d58969-797cf674ba09c6d5526e6676ca70ca50-1768611299-1768600499&remote=no_check_ip

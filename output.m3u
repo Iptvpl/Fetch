@@ -1,6 +1,4 @@
 #EXTM3U
-#EXTINF:-1,#EXTINF:-1 tvg-logo="https://i.imgur.com/5eN9luP.png" ,CHANNEL I
-http://10.99.99.99:8082/CHANNEL.I.HD/index.m3u8?token=c24f5d5254887598ad90244f569316b54ac5b5c1-8d15d6d64b32a3add4d8bb44682d51e3-1768611299-1768600499&remote=no_check_ip
 #EXTINF:-1,#EXTINF:-1 tvg-logo="https://i.imgur.com/XNmcPWE.png" ,ATN BANGLA
 http://10.99.99.99:8082/ATN.BANGLA.HD/index.m3u8?token=6dd564b667ef701dbe9d079cac15b28243d58969-797cf674ba09c6d5526e6676ca70ca50-1768611299-1768600499&remote=no_check_ip
 #EXTINF:-1,#EXTINF:-1 tvg-logo="https://i.imgur.com/DYrTMyz.png" ,ATN NEWS
@@ -98,6 +96,9 @@ http://10.99.99.99:8082/NATGEO.WILD.HD/index.m3u8?token=8d4f34df5431eb1f79a3d3b3
 http://10.99.99.99:8082/SONY.BBC.EARTH.HD/index.m3u8?token=d017db12da277a4e6f286f0896f240a2d5eb1538-2ddc31a3180fa27e49609519daf2f04d-1768611300-1768600500&remote=no_check_ip
 #EXTINF:-1,#EXTINF:-1 tvg-logo="https://i.imgur.com/DZ0TjX1.png" ,BBC EARTH HD
 http://10.99.99.99:8082/BBC.Earth.HD/index.m3u8?token=5451022381d50d3716e58c1996cd7c6e2d367417-2dea6c49c3b3b6be4616ef1eb111d90d-1768611300-1768600500&remote=no_check_ip
+#EXTINF:-1,#EXTINF:-1, tvg-logo="https://i.imgur.com/yMM1UZw.png",Wild Earth
+https://wildearth-plex.amagi.tv/master.m3u8
+No link found
 #EXTINF:-1,#EXTINF:-1 tvg-logo="https://i.imgur.com/DSwoe16.png" ,LOVE NATURE
 http://10.99.99.99:8082/LOVE.NATURE.HD/index.m3u8?token=27d7f1584e09848da3f0be8a3ee0b6e2005ba6c0-10e3f65a21a6a79c23e7068fef72e51e-1768611300-1768600500&remote=no_check_ip
 #EXTINF:-1,#EXTINF:-1 tvg-logo="https://i.imgur.com/obcu0T2.png" ,DURANTA TV

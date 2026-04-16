@@ -25,7 +25,7 @@ for row in reader:
         stream_url = row[1].strip()
 
         if channel_name and stream_url:
-            output_lines.append(f"#EXTINF:-1,{channel_name}")
+            output_lines.append(f"{channel_name}")
             output_lines.append(stream_url)
 
 # Save playlist file
